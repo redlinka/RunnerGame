@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxl0wktm7uevt"]
+
+[ext_resource type="Script" uid="uid://cco3f5u03ixc2" path="res://scripts/dash_bar.gd" id="1_p6wq6"]
+[ext_resource type="PackedScene" uid="uid://uk15e4w2eq0t" path="res://scenes/Dash_point.tscn" id="2_wq4ys"]
+[ext_resource type="Script" uid="uid://bv7r5j5xbopg" path="res://scripts/health_bar.gd" id="3_22y41"]
+[ext_resource type="PackedScene" uid="uid://c7bflkaspip0l" path="res://scenes/Health_point.tscn" id="4_dqyio"]
+[ext_resource type="PackedScene" uid="uid://u5lwa0homeau" path="res://scenes/Xp_bar.tscn" id="5_hiomp"]
+
+[node name="UI" type="Node2D"]
+
+[node name="DashBar" type="Node2D" parent="."]
+position = Vector2(-70, 550)
+script = ExtResource("1_p6wq6")
+dash_point = ExtResource("2_wq4ys")
+
+[node name="HealthBar" type="Node2D" parent="."]
+position = Vector2(70, 550)
+script = ExtResource("3_22y41")
+health_point = ExtResource("4_dqyio")
+
+[node name="Xp_bar" parent="." instance=ExtResource("5_hiomp")]
+position = Vector2(-54, -840)
+
+[node name="ScoreCounter" type="Label" parent="."]
+offset_left = -937.0
+offset_top = 62.0
+offset_right = -689.0
+offset_bottom = 138.0
+theme_override_font_sizes/font_size = 66
+text = "SCORE : 0"

@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb15hp2ulbkqk"]
+
+[ext_resource type="Script" uid="uid://bq53ohmuntxp6" path="res://scripts/player.gd" id="1_522al"]
+
+[node name="Player" type="CharacterBody2D"]
+top_level = true
+script = ExtResource("1_522al")
+dash_interval = 6.0
+
+[node name="HitBox" type="CollisionPolygon2D" parent="."]
+build_mode = 1
+polygon = PackedVector2Array(0, -50, -50, 50, 50, 50)
+
+[node name="Visual" type="Line2D" parent="."]
+points = PackedVector2Array(0, 50, -50, 50, 0, -50, 50, 50, 0, 50)
+closed = true
+width = 2.0
+default_color = Color(0, 1, 1, 1)

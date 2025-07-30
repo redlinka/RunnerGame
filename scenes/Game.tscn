@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://byxkn0gqvedv0"]
+
+[ext_resource type="PackedScene" uid="uid://bb15hp2ulbkqk" path="res://scenes/Player.tscn" id="1_noot3"]
+[ext_resource type="PackedScene" uid="uid://d3nklff84b00g" path="res://scenes/Spawner.tscn" id="2_l8eam"]
+[ext_resource type="Script" uid="uid://cfrj2qdxo4cjp" path="res://scripts/exp_spawner.gd" id="3_78awf"]
+[ext_resource type="PackedScene" uid="uid://dcank5p2ieich" path="res://scenes/Map.tscn" id="3_pwb6n"]
+[ext_resource type="PackedScene" uid="uid://pam1jus6rmci" path="res://scenes/Xp_point.tscn" id="3_yidl1"]
+[ext_resource type="PackedScene" uid="uid://bxl0wktm7uevt" path="res://scenes/PlayerUI.tscn" id="5_aug50"]
+[ext_resource type="PackedScene" uid="uid://boxjm3y4qebqw" path="res://scenes/PauseMenu.tscn" id="7_kiw3p"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_noot3")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Exp_Spawner2" parent="Player/Camera2D" instance=ExtResource("2_l8eam")]
+script = ExtResource("3_78awf")
+exp_scene = ExtResource("3_yidl1")
+
+[node name="Spawner" parent="Player/Camera2D" instance=ExtResource("2_l8eam")]
+spawn_interval = 5.0
+
+[node name="UI" parent="Player" instance=ExtResource("5_aug50")]
+position = Vector2(1, -520)
+
+[node name="TileMap" parent="." instance=ExtResource("3_pwb6n")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_kiw3p")]

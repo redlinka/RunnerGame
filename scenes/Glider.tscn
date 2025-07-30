@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuvfvof4lqgff"]
+
+[ext_resource type="Script" uid="uid://ciut80x7ue7io" path="res://scripts/glider.gd" id="1_epb0v"]
+
+[node name="Glider" type="CharacterBody2D"]
+disable_mode = 1
+input_pickable = true
+script = ExtResource("1_epb0v")
+speed = 1150
+
+[node name="HitBox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, -30, -30, 0, 0, 30, 30, 0)
+
+[node name="Visual" type="Line2D" parent="."]
+points = PackedVector2Array(-2, -35, -37, 0, 0, 37, 37, 0, 0, -37)
+closed = true
+width = 3.0
+default_color = Color(1, 0, 0, 1)

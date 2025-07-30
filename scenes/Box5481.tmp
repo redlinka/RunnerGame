@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxl0wktm7uevt"]
+
+[ext_resource type="Script" path="res://scripts/dash_bar.gd" id="1_u0jdg"]
+[ext_resource type="PackedScene" uid="uid://uk15e4w2eq0t" path="res://scenes/Dash_point.tscn" id="2_7kwy2"]
+[ext_resource type="Script" path="res://scenes/health_bar.gd" id="3_5yvn0"]
+[ext_resource type="PackedScene" uid="uid://c7bflkaspip0l" path="res://scenes/Health_point.tscn" id="4_s22ks"]
+
+[node name="UI" type="Node2D"]
+position = Vector2(0, 20)
+
+[node name="dashBar" type="Node2D" parent="."]
+position = Vector2(-70, 0)
+script = ExtResource("1_u0jdg")
+dash_point = ExtResource("2_7kwy2")
+
+[node name="healthBar" type="Node2D" parent="."]
+position = Vector2(70, 0)
+script = ExtResource("3_5yvn0")
+health_point = ExtResource("4_s22ks")

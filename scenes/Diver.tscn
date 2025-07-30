@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://b05s44hs85fnn"]
+
+[ext_resource type="Script" uid="uid://hg0ab3bo4cw4" path="res://scripts/diver.gd" id="1_pqlss"]
+
+[node name="ennemy" type="CharacterBody2D"]
+disable_mode = 1
+input_pickable = true
+script = ExtResource("1_pqlss")
+speed = 4800
+
+[node name="HitBox" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, 1)
+polygon = PackedVector2Array(0, -53, -20, -1, 0, 19, 20, -1)
+
+[node name="Visual" type="Line2D" parent="."]
+points = PackedVector2Array(0, -64, -25, 0, 0, 25, 25, 0, 0, -64)
+closed = true
+width = 3.0
+default_color = Color(1, 0, 1, 1)
+
+[node name="timer" type="Timer" parent="."]
+process_callback = 0
+one_shot = true
+autostart = true
